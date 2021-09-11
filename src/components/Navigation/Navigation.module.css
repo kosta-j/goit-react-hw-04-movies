@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+}
+
+.navItem {
+  padding: 10px;
+}
+
+.navItemActive {
+  color: #fc548c;
+}
