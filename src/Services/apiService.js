@@ -9,9 +9,9 @@ async function fetchWithErrorHandling(url = '', config = {}) {
 }
 
 function fetchTrendingMovies() {
-  fetchWithErrorHandling(
+  return fetchWithErrorHandling(
     `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`,
-  ).then(console.log);
+  );
 }
 
 function fetchMoviesBySearch(query) {
