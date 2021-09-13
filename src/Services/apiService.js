@@ -15,27 +15,27 @@ function fetchTrendingMovies() {
 }
 
 function fetchMoviesBySearch(query) {
-  fetchWithErrorHandling(
+  return fetchWithErrorHandling(
     `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`,
-  ).then(console.log);
+  );
 }
 
 function fetchMovieDetails(movie_id) {
-  fetchWithErrorHandling(
+  return fetchWithErrorHandling(
     `${BASE_URL}/movie/${movie_id}?api_key=${API_KEY}`,
-  ).then(console.log);
+  );
 }
 
 function fetchMovieCast(movie_id) {
-  fetchWithErrorHandling(
+  return fetchWithErrorHandling(
     `${BASE_URL}/movie/${movie_id}/credits?api_key=${API_KEY}`,
-  ).then(console.log);
+  );
 }
 
 function fetchMovieReviews(movie_id) {
-  fetchWithErrorHandling(
+  return fetchWithErrorHandling(
     `${BASE_URL}/movie/${movie_id}/reviews?api_key=${API_KEY}`,
-  ).then(console.log);
+  );
 }
 
 export {

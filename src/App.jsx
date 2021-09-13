@@ -5,6 +5,7 @@ import { Container } from './components/Container';
 import { HomeView } from './views/HomeView';
 import { MoviesView } from './views/MoviesView';
 import { NotFoundView } from './views/NotFoundView';
+import { MovieDetailView } from './views/MovieDetailView';
 
 function App() {
   return (
@@ -15,8 +16,11 @@ function App() {
           <Route exact path="/">
             <HomeView />
           </Route>
-          <Route path="/movies">
+          <Route exact path="/movies">
             <MoviesView />
+          </Route>
+          <Route path="/movies/:movieId">
+            <MovieDetailView />
           </Route>
           <Route>
             <NotFoundView />

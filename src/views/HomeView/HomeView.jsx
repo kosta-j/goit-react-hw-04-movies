@@ -11,10 +11,6 @@ function HomeView() {
       .then(response => setMovies(response.results));
   }, []);
 
-  useEffect(() => {
-    console.log(movies);
-  }, [movies]);
-
   return (
     <main>
       <h1>Trending today</h1>

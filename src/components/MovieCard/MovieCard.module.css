@@ -1,0 +1,22 @@
+img {
+  display: block;
+}
+
+.poster {
+  margin-right: 10px;
+}
+
+.mainMovieDetailsWrapper {
+  display: flex;
+}
+
+.genres {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.genresItem {
+  margin-right: 5px;
+}
