@@ -1,5 +1,5 @@
 // import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import { useState } from 'react';
 // import { toast } from 'react-toastify';
 import s from './SearchBar.module.css';
 
@@ -24,23 +24,20 @@ function SearchBar({ onSubmit }) {
   };
 
   return (
-    <header className={s.Searchbar}>
-      <form className={s.SearchForm} onSubmit={handleSubmit}>
-        <button type="submit" className={s.SearchFormButton}>
-          <span className={s.SearchFormButtonLabel}>Search</span>
-        </button>
-
-        <input
-          className={s.SearchFormInput}
-          type="text"
-          autoComplete="off"
-          autoFocus
-          placeholder="Search images and photos"
-          value={query}
-          onChange={handleChange}
-        />
-      </form>
-    </header>
+    <form className={s.SearchForm} onSubmit={handleSubmit}>
+      <input
+        className={s.SearchFormInput}
+        type="text"
+        autoComplete="off"
+        autoFocus
+        placeholder="Search movies"
+        value={query}
+        onChange={handleChange}
+      />
+      <button type="submit" className={s.SearchFormButton}>
+        <span className={s.SearchFormButtonLabel}>Search</span>
+      </button>
+    </form>
   );
 }
 

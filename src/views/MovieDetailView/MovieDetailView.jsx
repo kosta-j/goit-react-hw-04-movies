@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams, Route } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { MovieCard } from '../../components/MovieCard';
 import * as moviesApiService from '../../Services/apiService';
 
@@ -10,10 +10,6 @@ function MovieDetailView() {
   useEffect(() => {
     moviesApiService.fetchMovieDetails(movieId).then(setMovie);
   }, [movieId, setMovie]);
-
-  useEffect(() => {
-    console.log(movie);
-  }, [movie]);
 
   return (
     <>
