@@ -5,7 +5,6 @@ import { CastView } from './CastView';
 import s from './MovieCard.module.css';
 import { ReviewView } from './ReviewView';
 
-// const BASE_URL = 'https://image.tmdb.org/t/p/';
 const IMG_WIDTH = '300';
 
 function MovieCard({ movie }) {
@@ -18,7 +17,7 @@ function MovieCard({ movie }) {
     <>
       <div className={s.mainMovieDetailsWrapper}>
         <img
-          src={getImageFullPath(poster_path)}
+          src={getImageFullPath(poster_path, IMG_WIDTH)}
           width={IMG_WIDTH}
           alt={title}
           className={s.poster}
