@@ -13,7 +13,7 @@ function MoviesView() {
   useEffect(() => {
     const searchQuery = new URLSearchParams(location.search).get('query');
     setQuery(searchQuery);
-  }, []);
+  }, [location.search]);
 
   useEffect(() => {
     if (!query) {
@@ -35,7 +35,6 @@ function MoviesView() {
 
   return (
     <>
-      <p>Movies View</p>
       <SearchBar onSubmit={submitHandler} />
       {movies && <MoviesList movies={movies} />}
     </>
