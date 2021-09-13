@@ -1,1 +1,2 @@
-export { MovieDetailView } from './MovieDetailView';
+import { MovieDetailView } from './MovieDetailView';
+export default MovieDetailView;
