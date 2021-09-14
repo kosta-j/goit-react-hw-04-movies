@@ -14,7 +14,7 @@ function ReviewView({ movieId }) {
       <ul>
         {reviews.length > 0 ? (
           reviews.map(review => (
-            <li>
+            <li key={review.id}>
               <h4>Autor: {review.author}.</h4>
               <p>`{review.content}`</p>
             </li>

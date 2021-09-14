@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { IconContext } from 'react-icons';
 import { BsArrowLeft } from 'react-icons/bs';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 import { Button } from '../../components/Button';
 import { MovieCard } from '../../components/MovieCard';
 import * as moviesApiService from '../../Services/apiService';
@@ -9,6 +9,7 @@ import s from './MovieDetailView.module.css';
 
 function MovieDetailView() {
   const history = useHistory();
+  const location = useLocation();
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -17,7 +18,16 @@ function MovieDetailView() {
   }, [movieId, setMovie]);
 
   function handleGoBackButton() {
-    history.goBack();
+    console.log(location);
+    if (
+      location.pathname.includes('cast') ||
+      location.pathname.includes('review')
+    ) {
+      history.goBack();
+      history.goBack();
+    } else {
+      history.goBack();
+    }
   }
 
   return (
