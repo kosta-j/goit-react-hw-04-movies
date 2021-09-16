@@ -13,9 +13,6 @@ const MoviesView = lazy(() =>
 const MovieDetailView = lazy(() =>
   import('./views/MovieDetailView' /* webpackChunkName: "MovieDetailView" */),
 );
-const NotFoundView = lazy(() =>
-  import('./views/NotFoundView' /* webpackChunkName: "NotFoundView" */),
-);
 
 function App() {
   return (
@@ -34,7 +31,7 @@ function App() {
               <MovieDetailView />
             </Route>
             <Route>
-              <NotFoundView />
+              <HomeView />
             </Route>
           </Switch>
         </Suspense>

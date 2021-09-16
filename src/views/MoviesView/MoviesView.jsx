@@ -36,7 +36,7 @@ function MoviesView() {
   return (
     <>
       <SearchBar onSubmit={submitHandler} />
-      {movies && <MoviesList movies={movies} />}
+      {movies && <MoviesList movies={movies} baseLocation={location} />}
     </>
   );
 }

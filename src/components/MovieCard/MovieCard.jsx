@@ -7,7 +7,7 @@ import { ReviewView } from './ReviewView';
 
 const IMG_WIDTH = '300';
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, baseLocation }) {
   const { genres, title, vote_average, overview, release_date, poster_path } =
     movie;
   const year = moment(release_date).format('yyyy');
@@ -45,10 +45,18 @@ function MovieCard({ movie }) {
         <h4>Additional information</h4>
         <ul>
           <li>
-            <NavLink to={`${url}/cast`}>Cast</NavLink>
+            <NavLink
+              to={{ pathname: `${url}/cast`, state: { from: baseLocation } }}
+            >
+              Cast
+            </NavLink>
           </li>
           <li>
-            <NavLink to={`${url}/review`}>Review</NavLink>
+            <NavLink
+              to={{ pathname: `${url}/review`, state: { from: baseLocation } }}
+            >
+              Review
+            </NavLink>
           </li>
         </ul>
       </div>

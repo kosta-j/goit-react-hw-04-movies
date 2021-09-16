@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom';
 
-function MoviesList({ movies }) {
+function MoviesList({ movies, baseLocation }) {
   return (
     <ul>
       {movies &&
         movies.map(movie => (
           <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+            <Link
+              to={{
+                pathname: `/movies/${movie.id}`,
+                state: {
+                  // eslint-disable-next-line no-restricted-globals
+                  from: baseLocation,
+                },
+              }}
+            >
+              {movie.title}
+            </Link>
           </li>
         ))}
     </ul>

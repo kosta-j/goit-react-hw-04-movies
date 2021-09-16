@@ -18,27 +18,19 @@ function MovieDetailView() {
   }, [movieId, setMovie]);
 
   function handleGoBackButton() {
-    console.log(location);
-    if (
-      location.pathname.includes('cast') ||
-      location.pathname.includes('review')
-    ) {
-      history.goBack();
-      history.goBack();
-    } else {
-      history.goBack();
-    }
+    history.push(location?.state?.from ?? '/movies');
   }
 
   return (
     <>
+      {console.log(location)}
       <Button onClick={handleGoBackButton}>
         <IconContext.Provider value={{ className: `${s.goBackButtonArrow}` }}>
           <BsArrowLeft />
         </IconContext.Provider>
         Go back
       </Button>
-      {movie && <MovieCard movie={movie} />}
+      {movie && <MovieCard movie={movie} baseLocation={location.state.from} />}
     </>
   );
 }
