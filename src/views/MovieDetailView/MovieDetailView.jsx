@@ -23,7 +23,6 @@ function MovieDetailView() {
 
   return (
     <>
-      {console.log(location)}
       <Button onClick={handleGoBackButton}>
         <IconContext.Provider value={{ className: `${s.goBackButtonArrow}` }}>
           <BsArrowLeft />
